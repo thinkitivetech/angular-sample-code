@@ -1,0 +1,76 @@
+<div class="header">
+  <mat-toolbar class="headerbar" color="primary">
+    <span>Mind Bowser</span>
+  </mat-toolbar>
+</div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header class="mb-4">
+      <mat-card-title>Signup</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="signupForm" class="login-form" (ngSubmit)="submit()">
+      <mat-card-content>
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter Email" formControlName="email" name="email" (blur)="checkFormValidity()"
+            required />
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('email')" [errorMsg]="formErrors.email"></app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Enter First Name" formControlName="firstName" name="firstName"
+            (blur)="checkFormValidity()" required />
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('firstName')" [errorMsg]="formErrors.firstName">
+        </app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter Last Name" formControlName="lastName" name="lastname"
+            (blur)="checkFormValidity()" required />
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('lastName')" [errorMsg]="formErrors.lastName">
+        </app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter Password" formControlName="password" name="password"
+            (blur)="checkFormValidity()" [type]="hide ? 'password' : 'text'" required />
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? "visibility_off" : "visibility"
+            }}</mat-icon>
+        </mat-form-field>
+
+        <app-display-error [displayError]="isFieldValid('password')" [errorMsg]="formErrors.passwod">
+        </app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Enter Address" formControlName="address" name="address"
+            (blur)="checkFormValidity()" required />
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('address')" [errorMsg]="formErrors.address"></app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Birth Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthDate" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('birthDate')" [errorMsg]="formErrors.birthDate">
+        </app-display-error>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row">
+        <button mat-stroked-button color="accent" class="btn-block" fxFlexAlign="start" (click)="navigateToLogin()">
+          Return to Login
+        </button>
+        <button mat-raised-button color="accent" class="btn-block" fxFlexAlign="end" type="submit" (click)="submit()"
+          [disabled]="signupForm.invalid || signupForm.untouched">
+          Signup
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

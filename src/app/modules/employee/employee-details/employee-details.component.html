@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="container-fluid employee-sub-header">
+  <div class="row align-btn-end">
+    <button class="btn app-primary-btn" fxFlexAlign="start" (click)="onAddEditEmployee()">
+      Add Employee
+    </button>
+  </div>
+</div>
+
+<mat-table [dataSource]="employees" class="mat-elevation-z8 my-3 mx-4">
+  <ng-container matColumnDef="First Name">
+    <mat-header-cell *matHeaderCellDef class="bold"> First Name</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.firstName }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Last Name">
+    <mat-header-cell *matHeaderCellDef class="bold"> Last Name</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.lastName }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Address">
+    <mat-header-cell *matHeaderCellDef class="bold"> Address </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.address }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Birth Date">
+    <mat-header-cell *matHeaderCellDef class="bold"> Birth Date </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.birthDate | dateFormat }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Mobile">
+    <mat-header-cell *matHeaderCellDef class="bold">Mobile </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.mobile }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="City" class="bold">
+    <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.city }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Actions" >
+    <mat-header-cell *matHeaderCellDef class="bold"> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-stroked-button class="mx-1" (click)="makePayment(15)">
+        Pay
+      </button>
+      <button mat-stroked-button color="primary" class="mx-1" (click)="onAddEditEmployee(element)">
+        Edit
+      </button>
+      <button mat-stroked-button color="warn" class="mx-1" (click)="onDeleteBtnClick(element.id)" data-toggle="modal"
+        data-target="#delete-employee">
+        Delete
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<app-delete-employee [employeeId]="employeeId" (onDeleteEmployee)="deleteEmployee($event)"></app-delete-employee>

@@ -1,0 +1,25 @@
+<div class="header">
+  <mat-toolbar class="headerbar" color="primary">
+    <span>Mind Bowser</span>
+    <div class="header-sapcing">
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+      <span routerLinkActive="active" routerLink="../home" class="cursor-pointer">Home</span>
+      <span routerLinkActive="active" routerLink="../employee" class="cursor-pointer">Employee</span>
+    </div>
+
+    <span class="header-spacer"></span>
+    <img src="assets/img/img_avatar.png" alt="Avatar" />
+    <span>{{userName}}</span>
+    <button mat-icon-button [matMenuTriggerFor]="logoutBtn">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #logoutBtn="matMenu">
+      <button mat-menu-item routerLink="/login" (click)="logout()">
+        Log Out
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,43 @@
+<div class="header">
+  <mat-toolbar class="headerbar" color="primary">
+    <span>Mind Bowser</span>
+  </mat-toolbar>
+</div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header class="mb-4">
+      <mat-card-title> Login </mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="submit()">
+      <mat-card-content>
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label> Email</mat-label>
+          <input matInput placeholder="Enter Email" formControlName="email" name="email" (blur)="checkFormValidity()"
+            required />
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('email')" [errorMsg]="formErrors.email"></app-display-error>
+
+        <mat-form-field class="login-form-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="EnterPassword" formControlName="password" (blur)="checkFormValidity()"
+            [type]="hide ? 'password' : 'text'" required />
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? "visibility_off" : "visibility"
+            }}</mat-icon>
+        </mat-form-field>
+        <app-display-error [displayError]="isFieldValid('password')" [errorMsg]="formErrors.password">
+        </app-display-error>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row">
+        <button mat-stroked-button color="accent" class="btn-block" fxFlexAlign="start" (click)="navigateToSignUp()">
+          signup
+        </button>
+        <button mat-raised-button color="accent" class="btn-block" fxFlexAlign="end" type="submit" (click)="submit()"
+          [disabled]="loginForm.invalid || loginForm.untouched">
+          Login
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

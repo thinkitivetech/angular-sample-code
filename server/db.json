@@ -1,0 +1,78 @@
+{
+  "managers": [
+    {
+      "id": 1,
+      "email": "swapnil@gmail.com",
+      "firstName": "Swapnil",
+      "lastName": "Sapkal",
+      "password": "Pass@123",
+      "address": "Baramati",
+      "birthDate": "1997-08-22T18:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "email": "rushikesh@gmail.com",
+      "firstName": "Rushikesh",
+      "lastName": "Pawar",
+      "password": "Pass@123",
+      "address": "Pune",
+      "birthDate": "1995-09-20T18:30:00.000Z"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Swapnil",
+      "lastName": "Sapkal",
+      "address": "Pune,Maharashtra",
+      "birthDate": "1999-10-10T18:30:00.000Z",
+      "mobile": 9503298596,
+      "city": "pune"
+    },
+    {
+      "id": 2,
+      "firstName": "Aniket",
+      "lastName": "Sapkal",
+      "address": "Mumbai,Maharashtra",
+      "birthDate": "1995-05-05T18:30:00.000Z",
+      "mobile": 5567893452,
+      "city": "pune"
+    },
+    {
+      "id": 3,
+      "firstName": "Rushi",
+      "lastName": "Mane",
+      "address": "Nashik,Maharashtra",
+      "birthDate": "2021-08-01T18:30:00.000Z",
+      "mobile": 2353685458,
+      "city": "pune"
+    },
+    {
+      "id": 4,
+      "firstName": "Amit",
+      "lastName": "Kanse",
+      "address": "Nagpur,Maharashtra",
+      "birthDate": "1995-09-06T18:30:00.000Z",
+      "mobile": 8934567823,
+      "city": "pune"
+    },
+    {
+      "id": 5,
+      "firstName": "Shubham",
+      "lastName": "Rasal",
+      "address": "Nagar,Maharashtra",
+      "birthDate": "1998-10-10T18:30:00.000Z",
+      "mobile": 2357689045,
+      "city": "pune"
+    },
+    {
+      "id": 6,
+      "firstName": "Shubham",
+      "lastName": "Nagpure",
+      "address": "Nagar,Maharashtra",
+      "birthDate": "1997-07-12T18:30:00.000Z",
+      "mobile": 658565745,
+      "city": "pune"
+    }
+  ]
+}
