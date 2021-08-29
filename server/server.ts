@@ -29,7 +29,7 @@ server.post('/signup', (req, res) => {
     res.status(200).send({ responsePayload: req.body });
     db.managers.push(req.body);
   } else {
-    res.status(404).send({ responsePayload: { message: 'Manager not found' } });
+    res.status(404).send({ responsePayload: { message: 'Manager with same email already exists' } });
   }
 });
 
