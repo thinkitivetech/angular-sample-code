@@ -1,4 +1,4 @@
-# mindbowser
+# thinkitive
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 
@@ -37,6 +37,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 npm run server
 running on `http://localhost:4200/`
 
-## you can use this creds for login
-1. email: swapnil@gmail.com password": Pass@123  OR
-2. email: rushikesh@gmail.com  password: Pass@123
